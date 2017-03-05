@@ -4,16 +4,20 @@ class Api::V1::MaterialsController < ApiBaseController
   before_action :set_api_v1_material, only: [:show, :update, :destroy]
   before_action :authenticate_request!
 
-  # GET /api/v1/materials
+  # Listing of Materials
+  #
   def index
     @api_v1_materials = Material.all
   end
 
-  # GET /api/v1/materials/1
+  # Get detail info of Material
+  #
   def show
   end
 
-  # POST /api/v1/materials
+  # Create Material
+  #
+  # @body_parameter [string] name
   def create
     @api_v1_material = Material.new(api_v1_material_params)
 
@@ -26,7 +30,10 @@ class Api::V1::MaterialsController < ApiBaseController
     end
   end
 
-  # PATCH/PUT /api/v1/materials/1
+  # Update a Material
+  #
+  # @body_parameter [string] name
+  # @body_parameter [integer] id
   def update
     respond_to do |format|
       if @api_v1_material.update(api_v1_material_params)
@@ -37,8 +44,8 @@ class Api::V1::MaterialsController < ApiBaseController
     end
   end
 
-  # DELETE /api/v1/materials/1
-  # DELETE /api/v1/materials/1.json
+  # Delete a Material
+  #
   def destroy
     @api_v1_material.destroy
     respond_to do |format|

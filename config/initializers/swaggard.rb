@@ -1,5 +1,6 @@
 Swaggard.configure do |config|
   config.api_version = '0.1'
+  config.api_base_path = '/'
 	config.authentication_type  = 'header'
 	config.authentication_key   = 'Authorization' # Defaults to 'api_key'
 	config.default_content_type = 'application/json'

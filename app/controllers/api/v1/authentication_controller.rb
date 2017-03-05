@@ -1,4 +1,4 @@
-# @tag Authentication
+# @tag Sign In
 # API for get authentication token
 class Api::V1::AuthenticationController < ApiBaseController
 	
