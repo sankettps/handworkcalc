@@ -1,3 +1,5 @@
+# @tag Materials
+# API for creating, deleting, and listing materials.
 class Api::V1::MaterialsController < ApiBaseController
   before_action :set_api_v1_material, only: [:show, :update, :destroy]
   before_action :authenticate_request!

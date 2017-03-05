@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  root to: "home#index"
+  mount Swaggard::Engine, at: '/api_docs/swagger/'
+  root to: "home#index" 
+  get '/api' => redirect('/api_docs/swagger/')
   namespace :api do
 		namespace :v1 do
       resources :materials
