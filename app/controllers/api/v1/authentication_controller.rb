@@ -15,9 +15,10 @@ class Api::V1::AuthenticationController < ApiBaseController
     end
   end
 
-  def routing_error(error = 'Routing error', status = :not_found, exception=nil)
-    render :json => {:error => error}, :status => status
-	end
+  # render with 404 if no routes match
+ #  def routing_error(error = 'Routing error', status = :not_found, exception=nil)
+ #    render :json => {:error => error}, :status => status
+	# end
 
   private
 
