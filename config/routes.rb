@@ -1,10 +1,15 @@
 Rails.application.routes.draw do
+  namespace :api do
+    namespace :v1 do
+    end
+  end
   mount Swaggard::Engine, at: '/api_docs/swagger/'
   root to: "home#index" 
   get '/api' => redirect('/api_docs/swagger/')
   namespace :api do
 		namespace :v1 do
-      resources :materials
+      resources :designs, except: [:edit, :new]
+      resources :materials, except: [:edit, :new]
   		post 'auth_user' => 'authentication#authenticate_user'
   		get 'user_info' => 'users#show'
   		post 'sign_up' => 'registrations#sign_up'
