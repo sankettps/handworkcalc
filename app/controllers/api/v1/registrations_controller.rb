@@ -1,6 +1,7 @@
 # @tag Registration
 # API for sign up
 class Api::V1::RegistrationsController < ApiBaseController
+	
 	# Create user post
   #
   # @body_parameter [string] email
